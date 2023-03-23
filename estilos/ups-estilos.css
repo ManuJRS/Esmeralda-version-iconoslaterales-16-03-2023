@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+html {
+    background-color: var(--fondo-azul);
+}
+
+@font-face {
+    font-family:'Pepper-Sauce';
+    src: url('/fonts/h1/Pepper\ Sauce.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'abelregular';
+    src: url('abel-regular-webfont.eot');
+    src: url('abel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('abel-regular-webfont.woff2') format('woff2'),
+         url('abel-regular-webfont.woff') format('woff'),
+         url('abel-regular-webfont.ttf') format('truetype'),
+         url('abel-regular-webfont.svg#abelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'aileronlight';
+    src: url('Aileron-Light-webfont.eot');
+    src: url('Aileron-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Aileron-Light-webfont.woff2') format('woff2'),
+         url('Aileron-Light-webfont.woff') format('woff'),
+         url('Aileron-Light-webfont.ttf') format('truetype'),
+         url('Aileron-Light-webfont.svg#aileronlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --fondo-azul:#4ecdc6;
+    --fondo-amarillo:#f5eea6;
+    --texto-azul:#163258;
+    --texto-links:#51c5c3;
+    --blanco-generico:#ffffff;
+    --negro-generico:#000000;
+    --azul-patrones:#00aea9;
+}
+
+.contenedor1 {
+    background-image: url('/imagenes/Esmeralda-mascota-blanco.png');
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor1 h1 {
+    font-family: 'Pepper-sauce';
+    font-size: 8rem;
+    color: var(--texto-azul);
+}
+
+.contenedor1 h2 {
+    font-family: 'Pepper-sauce';
+    font-size: 5rem;
+    color: var(--fondo-amarillo);
+    text-shadow: 5px 5px #0000008f;
+}
+
+.contenedor1 p {
+    font-family: 'Pepper-sauce';
+    font-size: 3rem;
+    color: var(--negro-generico);
+}
+
+.mi-boton {
+    margin-top: 10px;
+    background-color: #163258;
+    color: var(--blanco-generico);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-family: 'Pepper-sauce';
+    cursor: pointer;
+  }
+  
+  .mi-boton:hover {
+    background-color: #1a4876;
+  }
+
+
+  @media (max-width: 952px) {
+
+    .contenedor1 h1 {
+        font-family: 'Pepper-sauce';
+        font-size: 8rem;
+        color: var(--texto-azul);
+    }
+    
+    .contenedor1 h2 {
+        font-family: 'Pepper-sauce';
+        font-size: 5rem;
+        color: var(--fondo-amarillo);
+        text-shadow: 5px 5px #0000008f;
+    }
+    
+    .contenedor1 p {
+        font-family: 'Pepper-sauce';
+        font-size: 3rem;
+        color: var(--negro-generico);
+    }
+
+  }
+
+
+  @media only screen and (max-width: 767px) {
+
+    .contenedor1 h1 {
+        font-family: 'Pepper-sauce';
+        font-size: 4rem;
+        color: var(--texto-azul);
+    }
+    
+    .contenedor1 h2 {
+        font-family: 'Pepper-sauce';
+        font-size: 3rem;
+        color: var(--fondo-amarillo);
+        text-shadow: 5px 5px #0000008f;
+    }
+    
+    .contenedor1 p {
+        font-family: 'Pepper-sauce';
+        font-size: 2rem;
+        color: var(--negro-generico);
+    }
+
+  }

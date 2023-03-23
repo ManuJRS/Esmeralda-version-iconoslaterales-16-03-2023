@@ -1,0 +1,4788 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+html {
+    background-color: var(--fondo-azul);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family:'Pepper-Sauce';
+    src: url('/fonts/h1/Pepper\ Sauce.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'abelregular';
+    src: url('abel-regular-webfont.eot');
+    src: url('abel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('abel-regular-webfont.woff2') format('woff2'),
+         url('abel-regular-webfont.woff') format('woff'),
+         url('abel-regular-webfont.ttf') format('truetype'),
+         url('abel-regular-webfont.svg#abelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'aileronlight';
+    src: url('Aileron-Light-webfont.eot');
+    src: url('Aileron-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Aileron-Light-webfont.woff2') format('woff2'),
+         url('Aileron-Light-webfont.woff') format('woff'),
+         url('Aileron-Light-webfont.ttf') format('truetype'),
+         url('Aileron-Light-webfont.svg#aileronlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --fondo-azul:#4ecdc6;
+    --fondo-amarillo:#f5eea6;
+    --texto-azul:#163258;
+    --texto-links:#51c5c3;
+    --blanco-generico:#ffffff;
+    --negro-generico:#000000;
+    --azul-patrones:#00aea9;
+}
+
+/* MODIFICACION DE ESCROLLBAR ******************************************************************************************************/
+body::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);    color: white;
+    }
+    
+    body::-webkit-scrollbar-thumb{
+    background-color: var(--texto-azul);
+    border-radius: 50px;
+    }
+    
+    body::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(102, 44, 117);
+    border-radius: 50px;
+    }
+/* MODIFICACION DE ESCROLLBAR ******************************************************************************************************/
+
+/*-- INICIA NAV BAR-------------------------------------------------------------*/
+nav {
+    height: 80px;
+    width: 100%;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 14px );
+    -webkit-backdrop-filter: blur( 14px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: fixed;
+    top: 0;
+    z-index: 888888;
+}
+
+.enlace {
+    position: absolute;
+    padding: 10px 50px;
+}
+
+.logo {
+    height: 60px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--texto-azul);
+    font-family: 'Pepper-sauce';
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    
+}
+
+.texto1 {
+    font-size: 3rem;
+    transition: all 0.5s;
+}
+
+.texto1:hover {
+    font-size: 3.2rem;
+    color: var(--negro-generico);
+}
+
+ul li i {
+    display: none;
+    color: transparent;
+}
+
+.fa-house {
+    display: none;
+}
+
+.fa-beer-mug-empty {
+    display: none;
+}
+
+.fa-envelope {
+    display: none;
+}
+
+.checkbtn {
+    font-size: 3rem;
+    color: var(--negro-generico);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        background: rgba( 255, 255, 255, 0.2 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 14px );
+        -webkit-backdrop-filter: blur( 14px );
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        position: fixed;
+        width: 30%;
+        left: -100%;
+        height: 40vh;
+        top: 90px;
+        text-align: center;
+        transition: all .5s;
+    }
+    
+    .fa-house {
+        display:inline-block;
+    }
+    
+    .fa-beer-mug-empty {
+        display: inline-block;
+    }
+    
+    .fa-envelope {
+        display: inline-block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 2rem;
+    }
+
+    li a:hover, li a.active {
+        background: none;
+        color:var(--fondo-amarillo);
+    }
+
+    #check:checked ~ ul {
+        left:0;
+    }
+
+    #check:checked ~ a {
+        left:0;
+    }
+
+    .texto1 {
+        display: none;
+    }
+    
+    ul li a i {
+        font-size: 2.5rem;
+    }
+}
+/*-- FINALIZA NAV BAR-------------------------------------------------------------*/
+
+
+/*-- INICIA SECCION PORTADA----------------------------------------------------*/
+.contenedor1 {
+    background-image: url('/imagenes/fondo-principal.webp');
+    width: 100%;
+    height: 110vh;
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contenedor1__back1 {
+    background-image: url('/imagenes/cervezas-covers.webp');
+    width: 100%;
+    background-size: 100%;
+    background-position: center;   
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+/*-- FINALIZA SECCION PORTADA----------------------------------------------*/
+
+
+/*-- INICIA SECCION MAPA Y NOSOTROS---------------------------------------------*/
+.contenedor2 {
+    height: 120vh;
+    align-items: center;
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    
+}
+
+.contenedor2__caja1 img {
+    margin-top: 40px;
+    width: 30%;
+    margin-bottom: -20px;
+}
+
+.contenedor2__caja1 h1 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--fondo-amarillo);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: -12px;
+}
+
+.contenedor2__caja1 h3 {
+    font-size: 7rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.contenedor2__caja1 p {
+    font-size: 3rem;
+    font-family: 'aileronlight';
+    width: 70%;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: justify;
+}
+/*-- FINALIZA SECCION MAPA Y NOSOTROS---------------------------------------------*/
+
+
+
+/*--INICIA SECCION CERVEZA CELESTUN------------------------------------------------*/
+.contenedor3 {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/imagenes/forma-onda-uno.webp');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.contenedor3__caja1 {
+    width: 600px;
+    text-align: center;
+}
+
+.contenedor3__caja1 img {
+    width: 550px;
+}
+
+.contenedor3__caja2 {
+    width: 500px;
+    text-align: left;
+}
+
+.contenedor3__caja2 h1 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor3__caja2 p {
+    font-size: 2rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    width: 500px;
+}
+
+.contenedor3__caja2 h2 {
+    font-size: 4rem;
+    font-family: 'aileronlight';
+    color: var(--texto-azul);
+    margin-top: 10px;
+}
+
+.mi-boton {
+    margin-top: 10px;
+    background-color: #163258;
+    color: var(--texto-links);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-family: 'Pepper-sauce';
+    cursor: pointer;
+  }
+  
+  .mi-boton:hover {
+    background-color: #1a4876;
+    z-index: -1 !important;
+  }
+
+  .btnig {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .eapps-link a {
+    display: none !important;
+  }
+
+  .contenedor3__caja2 p strong {
+    font-size: 2rem;
+  }
+
+  .contenedor4__caja1 p strong {
+    font-size: 2rem;
+  }
+
+  .contenedor5__caja2 p strong {
+    font-size: 2rem;
+  }
+
+  .contenedor6__caja1 p strong {
+    font-size: 2rem;
+  }
+/*--FINALIZA SECCION CERVEZA CELESTUN----------------------------------------------*/
+
+
+/*--INICIA SECCION CERVEZA COLORADA-----------------------------------------------*/
+.contenedor4 {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap:wrap-reverse;
+}
+
+.contenedor4__caja2 {
+    width: 600px;
+}
+
+
+.contenedor4__caja2 img {
+    text-align: left;
+    width: 550px;
+}
+
+.contenedor4__caja2 {
+    text-align: right;
+}
+
+.contenedor4__caja1 {
+    width: 620px;
+    text-align: right;
+}
+
+.contenedor4__caja1 h1 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 p {
+    font-size: 2rem;
+    font-family: 'abelregular';
+
+    color: var(--negro-generico);
+}
+
+.contenedor4__caja1 h2 {
+    font-family: 'aileronlight';
+    font-size: 4rem;
+    color: var(--texto-azul);
+    margin-top: 10px;
+}
+/*--FINALIZA SECCION CERVEZA CELESTUN----------------------------------------------*/
+
+/*--INICIA SECCION CERVEZA OASIS------------------------------------------------*/
+.contenedor5 {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/imagenes/fondo\ onda\ 2.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedor5__caja1 {
+    width: 600px;
+    text-align: center;
+}
+
+.contenedor5__caja1 img {
+    width: 550px;
+}
+
+.contenedor5__caja2 {
+    width: 500px;
+    text-align: left;
+}
+
+.contenedor5__caja2 h1 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 p {
+    font-size: 2rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+}
+
+.contenedor5__caja2 h2 {
+    font-size: 4rem;
+    font-family: 'aileronlight';
+    color: var(--texto-azul);
+    margin-top: 10px;
+}
+
+.mi-boton {
+    margin-top: 10px;
+    background-color: #163258;
+    color: var(--texto-links);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-family: 'Pepper-sauce';
+    cursor: pointer;
+  }
+  
+  .mi-boton:hover {
+    background-color: #1a4876;
+  }
+/*--FINALIZA SECCION CERVEZA OASIS----------------------------------------------*/
+
+
+/*--INICIA SECCION CERVEZA YUCATAN-------------------------------------------------*/
+.contenedor6 {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+.contenedor6__caja2 img {
+    text-align: left;
+    width: 550px;
+}
+
+.contenedor6__caja2 {
+    text-align: right;
+    width: 600px;
+}
+
+.contenedor6__caja1 {
+    width: 600px;
+    text-align: right;
+}
+
+.contenedor6__caja1 h1 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja1 p {
+    font-size: 2rem;
+    font-family: 'abelregular';
+
+    color: var(--negro-generico);
+}
+
+.contenedor6__caja1 h2 {
+    font-family: 'aileronlight';
+    font-size: 4rem;
+    color: var(--texto-azul);
+    margin-top: 10px;
+}
+/*--FINALIZA SECCION CERVEZA YUCATAN-----------------------------------------------*/
+
+
+/*INICIA DIVISOR CURVO AMARILLO---------------------------------------------------*/
+.custom-shape-divider-bottom-1677867804 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1677867804 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 229px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1677867804 .shape-fill {
+    fill: #F5EEA6;
+}
+/*FINALIZA DIVISOR CURVO AMARILLO-------------------------------------------------*/
+
+
+/*INICIA SECCION INSTAGRAM-------------------------------------------------*/
+.contenedor7 {
+    height: 70vh;
+    background-color: var(--fondo-amarillo);
+}
+
+.contenedor7__caja1 h2 {
+    font-size: 12rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    align-items: center;
+    text-align: center;
+}
+
+/*FINALIZA SECCION INSTAGRAM-----------------------------------------------*/
+
+
+
+/*INICIA SECCION FORMULARIO------------------------------------------------*/
+.contenedor8 {
+    height: 240vh;
+    background-color: var(--fondo-amarillo);
+    background-image: url('/imagenes/fondo-curva-amarillo.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.contenedor8__caja1 h2 {
+    font-size: 12rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor8__caja2 {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor8__caja2 img {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor8__caja3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor8__caja3 p {
+    font-size: 4rem;
+    width: 70%;
+    font-family: 'abelregular';
+    color: var(--texto-azul);
+
+}
+/*FINALIZA SECCION FORMULARIO----------------------------------------------*/
+
+
+
+/*--ELIMINACION DE WIDGETS EXTRAS---------------------------------------*/
+.eapps-remove-link {
+    visibility: hidden !important;
+    display: none !important;
+    z-index: -1;
+}
+
+a.eapps-link {
+    visibility: hidden !important;
+    display: none !important;
+    background: rgb(245, 238, 166) !important;
+    color: rgb(245, 238, 166) !important;
+    background-color: rgb(245, 238, 166) !important;
+    padding: 0 !important;
+    z-index:-1 !important;
+    display: block !important;
+    position: absolute !important;
+}
+
+.eapps-widget-toolbar-panel-wrapper {
+    visibility: hidden !important;
+}
+
+
+.elfsight-app-ae22a0b8-e146-4e69-9947-d1334164baca {
+    z-index:10 !important;
+    position: relative !important;
+}
+
+.rectangulo {
+    background-color: var(--fondo-amarillo);
+    height: 30vh;
+    margin-top: -140px;
+    z-index: 20 !important;
+    position: relative;
+}
+
+.supernova {
+    background-color: transparent !important;
+}
+
+.form-section.page-section {
+    box-shadow : none !important;
+}
+
+.jotform-form {
+    box-shadow: none !important;
+}
+
+/*--ELIMINACION DE WIDGETS EXTRAS--------------------------------------*/
+
+
+/*--INICIA FOOTER---------------------------------------------------*/
+    footer {
+        width: 100%;
+        background-color: transparent !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pie__logo img {
+        width: 100px;
+    }
+
+    .pie__iconos i {
+        font-size: 5rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: var(--texto-azul);
+    }
+
+    .pie__correo h4 {
+        font-size: 3rem;
+        color: var(--texto-azul);
+        font-family: 'Pepper-sauce';
+    }
+
+    .pie__logo img {
+        margin-right: 10px;
+    }
+/*--FINALIZA FOOTER-------------------------------------------------*/
+
+
+
+
+
+/*--FORMATO RESPONSIVO PARA ESCRITORIOS 992PX Y 1550PX------------------------------------*/ 
+@media only screen and (min-width: 992px) and (max-width: 1550px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 100vh;
+        background-size:90%;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+    .contenedor2 {
+        height: 100vh;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .contenedor2__caja1 img {
+        margin-top: -10px;
+        width: 40%;
+        margin-bottom: -200px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 150px;
+    }
+    
+    .contenedor2__caja1 h3 {
+        font-size: 6rem;
+        margin-top: -35px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor2__caja1 p {
+        font-size: 2rem;
+        font-family: 'aileronlight';
+        width: 70%;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /*--INICIA SECCION CERVEZA CELESTUN------------------------------------------------*/
+    .contenedor3 {
+        height: 100vh;
+        width: 100%;
+        background-image: url('/imagenes/forma-onda-uno.webp');
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+
+    .contenedor3__caja1 {
+        width: 600px;
+        text-align: center;
+    }
+
+    .contenedor3__caja1 img {
+        width: 350px;
+    }
+
+    .contenedor3__caja2 {
+        width: 450px;
+        text-align: left;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 10rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 p {
+        font-size: 2rem;
+        font-family: 'abelregular';
+        color: var(--negro-generico);
+    }
+
+    .contenedor3__caja2 h2 {
+        font-size: 4rem;
+        font-family: 'aileronlight';
+        color: var(--texto-azul);
+        margin-top: 10px;
+    }
+
+    .mi-boton {
+        margin-top: 10px;
+        background-color: #163258;
+        color: var(--texto-links);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 2rem;
+        font-family: 'Pepper-sauce';
+        cursor: pointer;
+    }
+    
+    .mi-boton:hover {
+        background-color: #1a4876;
+    }
+/*--FINALIZA SECCION CERVEZA CELESTUN----------------------------------------------*/
+
+
+/*--CERVEZA COLORADA---------*/
+.contenedor4 {
+    justify-content: center !important;
+    height: 120vh;
+}
+
+.contenedor4__caja2 img {
+    width: 350px;
+    text-align: center !important;
+}
+
+.contenedor4__caja2 {
+    text-align: center !important;
+    width: 350px;
+}
+
+.contenedor4__caja1 h1 {
+    font-size: 10rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 {
+    text-align: right !important;
+    margin-top: -200px !important;
+
+}
+/*--CERVEZA COLORADA---------*/
+
+
+
+
+/*--CERVEZA OASIS---------*/
+.contenedor5 {
+    height: 120vh;
+    justify-content: center !important;
+}
+
+.contenedor5__caja1 img {
+    width: 350px;
+}
+
+.contenedor5__caja2 {
+    margin-top: -200px !important;
+    width: 450px;
+}
+
+.contenedor5__caja2 h1 {
+    font-size: 10rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 {
+    text-align: left;
+}
+/*--CERVEZA OASIS---------*/
+
+
+
+
+
+
+/*--CERVEZA YUCATAN-------*/
+.contenedor6 {
+    justify-content: center !important;
+    height: 120vh;
+}
+
+.contenedor6__caja2 img {
+    width: 350px;
+    text-align: center !important;
+}
+
+.contenedor6__caja2 {
+    text-align: center !important;
+    width: 350px;
+}
+
+.contenedor6__caja1 h1 {
+    font-size: 10rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja1 {
+    text-align: right !important;
+    margin-top: -200px !important;
+
+}
+/*--CERVEZA YUCATAN-------*/
+
+
+
+
+/*--SECCION FORMULARIO----*/
+.contenedor8 {
+    height: 214vh;
+    background-color: var(--fondo-amarillo);
+    background-image: url('/imagenes/fondo-curva-amarillo.webp');
+    background-position: center;
+    background-size: cover;
+}
+/*--SECCION FORMULARIO----*/
+
+
+
+
+
+/*--SECCION INSTAGRAM-------*/
+.contenedor7 {
+    height: 80vh;
+    background-color: var(--fondo-amarillo);
+}
+
+.contenedor7__caja1 h2 {
+    font-size: 8rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    align-items: center;
+    text-align: center;
+}
+/*--SECCION INSTAGRAM------*/
+
+
+
+
+/*--SECCION FORMULARIO----*/
+.contenedor8 {
+    height: 260vh;
+    background-color: var(--fondo-amarillo);
+    background-image: url('/imagenes/fondo-curva-amarillo.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.contenedor8__caja1 h2 {
+    font-size: 8rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor8__caja2 {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor8__caja2 img {
+    width: 80%;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor8__caja3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedor8__caja3 p {
+    font-size: 5rem;
+    width: 70%;
+    font-family: 'abelregular';
+    color: var(--texto-azul);
+
+}
+/*--SECCION FORMULARIO----*/
+
+
+
+.rectangulo {
+    background-color: var(--fondo-amarillo);
+    height: 20vh;
+    z-index: 20 !important;
+}
+
+.contenedor9 {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+.contenedor9__caja1 {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+.contenedor9__caja1 h4 {
+    font-size: 7rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.contenedor9__caja1 h2 {
+    font-size: 10rem !important;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--fondo-amarillo);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 5;
+    position: relative;
+}
+
+.contenedor9__caja1 h3 {
+    font-size: 4rem;
+    margin-top: 10px;
+    font-family: 'abelregular';
+    color: var(--texto-azul);
+}
+
+.contenedor9__caja1 p {
+    font-size: 2rem !important;
+    font-family: 'aileronlight';
+    width: 70%;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: justify;
+}
+/*-- FINALIZA SECCION MAPA Y NOSOTROS---------------------------------------------*/
+
+.contenedor10 {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 80px !important;
+}
+
+.contenedor10__caja1 {
+    width: 100%;
+}
+
+.contenedor10__caja1 h2 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--fondo-amarillo);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 5;
+    position: relative;
+}
+
+.contenedor10__caja1 h4 {
+    font-size: 7rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.contenedor10__caja1 p {
+    font-size: 2rem !important;
+    font-family: 'aileronlight';
+    display: inline-block;
+    margin-top: 20px;
+    text-align:justify;
+    width: 70%;
+}
+
+.contenedor10__caja2 {
+    width: 100%;
+}
+
+.contenedor10__caja2 img {
+    width: 35%;
+    text-align: left;
+    align-items: start;
+    justify-content: start;
+}
+  
+
+.container__slider{
+    max-width: 1000px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 600px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+#item-2:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-2{
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-3:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3{
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3{
+    transform: translateX(0) scale(1);
+    z-index: 1;
+}  
+
+ 
+
+}
+/*--FORMATO RESPONSIVO PARA ESCRITORIOS 992PX Y 1550PX------------------------------------*/ 
+
+
+
+
+  
+/*--FORMATO RESPONSIVO PARA TABLETAS------------------------------------------------------*/
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 70vh;
+        background-size:cover !important;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+
+    .contenedor2 {
+        height: 70vh;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+
+    .contenedor2__caja1 img {
+        margin-top: -10px;
+        width: 500px;
+        margin-bottom: -200px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 100px;
+    }
+    
+    .contenedor2__caja1 h3 {
+        font-size: 6rem;
+        margin-top: -35px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor2__caja1 p {
+        font-size: 2rem;
+        font-family: 'aileronlight';
+        width: 40%;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+
+    /*--CERVEZA CELESTUN---------*/
+    .contenedor3 {
+        height: 120vh;
+        justify-content: center !important;
+    }
+
+    .contenedor3__caja1 img {
+        width: 450px;
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -200px !important;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 10rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        text-align: center;
+    }
+    /*--CERVEZA CELESTUN---------*/
+
+
+
+
+    /*--CERVEZA COLORADA---------*/
+    .contenedor4 {
+        justify-content: center !important;
+        height: 120vh;
+    }
+
+    .contenedor4__caja2 img {
+        width: 450px;
+        text-align: center !important;
+    }
+
+    .contenedor4__caja2 {
+        text-align: center !important;
+    }
+
+
+    .contenedor4__caja1 h1 {
+        font-size: 10rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor4__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+
+    }
+    /*--CERVEZA COLORADA---------*/
+
+
+
+
+    /*--CERVEZA OASIS---------*/
+    .contenedor5 {
+        height: 120vh;
+        justify-content: center !important;
+    }
+
+    .contenedor5__caja1 img {
+        width: 450px;
+    }
+
+    .contenedor5__caja2 {
+        margin-top: -200px !important;
+    }
+
+    .contenedor5__caja2 h1 {
+        font-size: 10rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor5__caja2 {
+        text-align: center;
+    }
+    /*--CERVEZA OASIS---------*/
+
+
+    
+
+    /*--CERVEZA YUCATAN-------*/
+    .contenedor6 {
+        justify-content: center !important;
+        height: 120vh;
+    }
+
+    .contenedor6__caja2 img {
+        width: 450px;
+        text-align: center !important;
+    }
+
+    .contenedor6__caja2 {
+        text-align: center !important;
+    }
+
+    .contenedor6__caja1 h1 {
+        font-size: 10rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor6__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+
+    }
+    /*--CERVEZA YUCATAN-------*/
+
+
+
+
+    /*--SECCION INSTAGRAM-------*/
+    .contenedor7 {
+        height: 70vh;
+        background-color: var(--fondo-amarillo);
+    }
+    
+    .contenedor7__caja1 h2 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    /*--SECCION INSTAGRAM------*/
+
+
+
+
+    /*--SECCION FORMULARIO----*/
+    .contenedor8 {
+        height: 180vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: center;
+        background-size: contain;
+    }
+    
+    .contenedor8__caja1 h2 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contenedor8__caja2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contenedor8__caja2 img {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 p {
+        font-size: 2rem;
+        width: 70%;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    
+    }
+    /*--SECCION FORMULARIO----*/
+
+  }
+/*--FORMATO RESPONSIVO PARA TABLETAS------------------------------------------------------*/
+
+  
+
+
+/*--FORMATO RESPONSIVO PARA CELULARES------------------------------------------------------*/
+  @media only screen and (max-width: 767px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 70vh;
+        background-size:220% !important;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+    ul li i {
+        display: none;
+        color: var(--texto-azul);
+    }
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .contenedor2 {
+        height: 70vh;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .contenedor2__caja1 img {
+        margin-top: -10px;
+        width: 300px;
+        margin-bottom: -170px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 100px;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 5rem;
+        margin-top: -35px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor2__caja1 p {
+        font-size: 2rem;
+        font-family: 'aileronlight';
+        width: 80%;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    /*--CERVEZA CELESTUN---------*/
+    .contenedor3 {
+        height: 120vh;
+        justify-content: center !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 200px;
+    }
+
+    .contenedor3__caja1 img {
+        width: 200px;
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -200px !important;
+        width: 250px;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        text-align: center;
+    }
+    /*--CERVEZA CELESTUN---------*/
+
+
+
+
+    /*--CERVEZA COLORADA---------*/
+    .contenedor4 {
+        justify-content: center !important;
+        height: 120vh;
+    }
+
+    .contenedor4__caja2 img {
+        width: 200px;
+        text-align: center !important;
+    }
+
+    .contenedor4__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+
+    .contenedor4__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor4__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+        width: 200px;
+
+    }
+    /*--CERVEZA COLORADA---------*/
+
+
+
+    /*--CERVEZA OASIS---------*/
+    .contenedor5 {
+        height: 120vh;
+        justify-content: center !important;
+    }
+
+    .contenedor5__caja1 img {
+        width: 200px;
+    }
+    
+    .contenedor5__caja1 {
+        width: 200px;
+    }
+
+    .contenedor5__caja2 {
+        margin-top: -200px !important;
+    }
+
+    .contenedor5__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor5__caja2 {
+        text-align: center;
+        width: 200px;
+    }
+    /*--CERVEZA OASIS---------*/
+
+
+    /*--CERVEZA YUCATAN-------*/
+    .contenedor6 {
+        justify-content: center !important;
+        height: 120vh;
+    }
+
+    .contenedor6__caja2 img {
+        width: 200px;
+        text-align: center !important;
+    }
+
+    .contenedor6__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+    .contenedor6__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor6__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+        width: 200px;
+
+    }
+    /*--CERVEZA YUCATAN-------*/
+
+
+
+    /*--SECCION INSTAGRAM-------*/
+    .contenedor7 {
+        height: 50vh;
+        background-color: var(--fondo-amarillo);
+        overflow: hidden;
+    }
+
+    .contenedor7__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+
+    .rectangulo {
+        background-color: var(--fondo-amarillo);
+        height: 10vh;
+        margin-top: -75px;
+        z-index: 20 !important;
+        position: relative;
+    }
+    /*--SECCION INSTAGRAM------*/
+
+
+
+    /*--SECCION FORMULARIO----*/
+    .contenedor8 {
+        height: 150vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor8__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contenedor8__caja2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contenedor8__caja2 img {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 p {
+        font-size: 2rem;
+        width: 70%;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    
+    }
+    /*--SECCION FORMULARIO----*/
+
+
+
+/*--INICIA FOOTER---------------------------------------------------*/
+footer {
+    width: 100%;
+    background-color: transparent !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pie__logo img {
+    width: 80px;
+}
+
+.pie__iconos i {
+    font-size: 3rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: var(--texto-azul);
+}
+
+.pie__correo h4 {
+    font-size: 2rem;
+    color: var(--texto-azul);
+    font-family: 'Pepper-sauce';
+}
+
+.pie__logo img {
+    margin-right: 0px;
+}
+/*--FINALIZA FOOTER-------------------------------------------------*/
+
+  }
+/*--FORMATO RESPONSIVO PARA CELULARES------------------------------------------------------*/
+
+
+@keyframes ldio-1vq18l5fpe7 {
+          0% { opacity: 1 }
+          100% { opacity: 0 }
+        }
+    .ldio-1vq18l5fpe7 div {
+          left: 94px;
+          top: 48px;
+          position: absolute;
+          animation: ldio-1vq18l5fpe7 linear 1s infinite;
+          background: var(--blanco-generico);
+          width: 12px;
+          height: 24px;
+          border-radius: 6px / 12px;
+          transform-origin: 6px 52px;
+        }
+    .ldio-1vq18l5fpe7 div:nth-child(1) {
+          transform: rotate(0deg);
+          animation-delay: -0.9166666666666666s;
+          background: var(--blanco-generico);
+        }
+    .ldio-1vq18l5fpe7 div:nth-child(2) {
+          transform: rotate(30deg);
+          animation-delay: -0.8333333333333334s;
+          background: var(--blanco-generico);
+        }
+    .ldio-1vq18l5fpe7 div:nth-child(3) {
+          transform: rotate(60deg);
+          animation-delay: -0.75s;
+          background: var(--blanco-generico);
+        }
+    .ldio-1vq18l5fpe7 div:nth-child(4) {
+          transform: rotate(90deg);
+          animation-delay: -0.6666666666666666s;
+          background: var(--blanco-generico);
+        }
+    .ldio-1vq18l5fpe7 div:nth-child(5) {
+          transform: rotate(120deg);
+          animation-delay: -0.5833333333333334s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(6) {
+          transform: rotate(150deg);
+          animation-delay: -0.5s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(7) {
+          transform: rotate(180deg);
+          animation-delay: -0.4166666666666667s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(8) {
+          transform: rotate(210deg);
+          animation-delay: -0.3333333333333333s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(9) {
+          transform: rotate(240deg);
+          animation-delay: -0.25s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(10) {
+          transform: rotate(270deg);
+          animation-delay: -0.16666666666666666s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(11) {
+          transform: rotate(300deg);
+          animation-delay: -0.08333333333333333s;
+          background: var(--blanco-generico);
+        }.ldio-1vq18l5fpe7 div:nth-child(12) {
+          transform: rotate(330deg);
+          animation-delay: 0s;
+          background: var(--blanco-generico);
+        }
+        .loadingio-spinner-spinner-y2xyhl5cd {
+          width: 200px;
+          height: 200px;
+          overflow: hidden;
+        }
+        .ldio-1vq18l5fpe7 {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform: translateZ(0) scale(1);
+          backface-visibility: hidden;
+          transform-origin: 0 0; /* see note above */
+        }
+
+        .centrador {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-image: url('/imagenes/fondo-esme-loader.webp');
+            background-color: var(--azul-patrones);
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 999999 !important;
+        }
+        .ldio-1vq18l5fpe7 div { box-sizing: content-box; }
+        /* generated by https://loading.io/ */
+
+        .hidden {
+            overflow: hidden;
+        }
+
+
+@media only screen and (min-width: 250px) and (max-width: 360px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 50vh !important;
+        background-size:220% !important;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 60vh !important;
+    }
+
+    .contenedor2 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 150px !important;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 3rem;
+        margin-top: -5px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+
+    .contenedor2__caja1 p {
+        font-size: 1.5rem;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+
+/*--CELESTUN--*/
+    .contenedor3__caja2 h1 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -180px !important;
+    }
+
+    .contenedor3__caja2 p {
+        font-size: 1.5rem;
+        font-family: 'abelregular';
+        color: var(--negro-generico);
+        text-align: justify;
+        width: 300px !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+
+    .contenedor3__caja2 {
+        width: 300px !important;
+    }
+/*--CELESTUN--*/
+
+
+/*--COLORADA--*/
+.contenedor4__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 {
+    margin-top: -250px !important;
+}
+
+.contenedor4__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor4__caja1 {
+    width: 300px;
+}
+
+
+.contenedor4__caja2 {
+    width: 300px;
+}
+/*--COLORADA--*/
+
+
+/*--OASIS--*/
+.contenedor5__caja2 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 {
+    margin-top: -200px !important;
+}
+
+.contenedor5__caja2 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor5__caja1 {
+    width: 300px;
+}
+
+
+.contenedor5__caja2 {
+    width: 300px;
+}
+/*--OASIS--*/
+
+
+/*--YUCATAN--*/
+.contenedor6__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja2 {
+    margin-top: -50px !important;
+}
+
+.contenedor6__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor6__caja1 {
+    width: 300px;
+}
+
+.contenedor6__caja2 img {
+    padding-top: 40px;
+}
+
+
+.contenedor6__caja2 {
+    width: 300px;
+}
+/*--YUCATAN--*/
+
+
+
+    .contenedor8__caja1 h2 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .pie__correo h4 {
+        font-size: 1rem;
+    }
+
+    .contenedor8 {
+        height: 198vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: right;
+        background-size: cover;
+    }
+
+    .contenedor8__caja1 h2 {
+        padding-top: 100px;
+    }
+
+    .contenedor9 {
+        display: flex;
+        height: 70vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+        margin-top: -150px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 100% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 70%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 70vh !important;
+        padding-top: 0px !important;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 90% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+
+
+}
+
+@media only screen and (min-width: 361px) and (max-width: 375px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 50vh !important;
+        background-size:220% !important;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 60vh !important;
+    }
+
+
+    .contenedor2 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 75vh !important;
+        display: flex;
+        background-image: url('/imagenes/forma-onda-uno.webp');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 150px !important;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 3rem;
+        margin-top: -5px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+
+    .contenedor2__caja1 p {
+        font-size: 1.5rem;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+
+/*--CELESTUN--*/
+    .contenedor3__caja2 h1 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -120px !important;
+    }
+
+    .contenedor3__caja2 p {
+        font-size: 1.5rem;
+        font-family: 'abelregular';
+        color: var(--negro-generico);
+        text-align: justify;
+        width: 300px !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+
+    .contenedor3__caja2 {
+        width: 300px;
+    }
+/*--CELESTUN--*/
+
+
+/*--COLORADA--*/
+.contenedor4__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 {
+    margin-top: -180px !important;
+}
+
+.contenedor4__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor4__caja1 {
+    width: 300px;
+}
+
+
+.contenedor4__caja2 {
+    width: 300px;
+}
+/*--COLORADA--*/
+
+
+/*--OASIS--*/
+.contenedor5__caja2 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 {
+    margin-top: -160px !important;
+}
+
+.contenedor5__caja2 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor5__caja1 {
+    width: 300px;
+}
+
+
+.contenedor5__caja2 {
+    width: 300px;
+}
+/*--OASIS--*/
+
+
+/*--YUCATAN--*/
+.contenedor6__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja2 {
+    margin-top: -120px !important;
+}
+
+.contenedor6__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor6__caja1 {
+    width: 300px;
+}
+
+.contenedor6__caja2 img {
+    padding-top: 40px;
+}
+
+
+.contenedor6__caja2 {
+    width: 300px;
+}
+/*--YUCATAN--*/
+
+
+
+    .contenedor8__caja1 h2 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .pie__correo h4 {
+        font-size: 1rem;
+    }
+
+    .contenedor8 {
+        height: 221vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: right;
+        background-size: cover;
+    }
+
+    .contenedor8__caja1 h2 {
+        padding-top: 100px;
+    }
+
+    .contenedor9 {
+        display: flex;
+        height: 60vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 0px !important;
+        text-align: justify;
+        margin-top: -150px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px !important;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 90% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 70%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 70vh !important;
+        background-position: center;
+        background-size: cover;
+        padding-top: 0px !important;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+        margin-top: 0px !important;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 70% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+
+
+
+    
+}
+
+@media only screen and (min-width: 376px) and (max-width: 390px) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 50vh !important;
+        background-size:220% !important;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 60vh !important;
+    }
+
+    .contenedor2 {
+        height: 60vh;
+        align-items: center;
+        text-align: center;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        
+    }
+
+    .contenedor2__caja1 {
+        margin-top: 10px !important;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 150px !important;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 3rem;
+        margin-top: -5px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+
+    .contenedor2__caja1 p {
+        font-size: 1.5rem;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+
+/*--CELESTUN--*/
+
+    .contenedor3 {
+        height: 100vh;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -190px !important;
+    }
+
+    .contenedor3__caja2 p {
+        font-size: 1.5rem;
+        font-family: 'abelregular';
+        color: var(--negro-generico);
+        text-align: justify;
+        width: 300px;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+
+    .contenedor3__caja2 {
+        width: 300px;
+    }
+/*--CELESTUN--*/
+
+
+/*--COLORADA--*/
+
+.contenedor4 {
+    height: 100vh;
+}
+
+.contenedor4__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 {
+    margin-top: -250px !important;
+}
+
+.contenedor4__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor4__caja1 {
+    width: 300px;
+}
+
+
+.contenedor4__caja2 {
+    width: 300px;
+}
+/*--COLORADA--*/
+
+
+/*--OASIS--*/
+
+.contenedor5 {
+    height: 100vh;
+    
+}
+
+.contenedor5__caja2 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 {
+    margin-top: -200px !important;
+}
+
+.contenedor5__caja2 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor5__caja1 {
+    width: 300px;
+}
+
+
+.contenedor5__caja2 {
+    width: 300px;
+}
+/*--OASIS--*/
+
+
+/*--YUCATAN--*/
+
+.contenedor6 {
+    height: 115vh !important;
+}
+
+
+.contenedor6__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja1 {
+    margin-top: -300px !important;
+}
+
+.contenedor6__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor6__caja1 {
+    width: 300px;
+}
+
+.contenedor6__caja2 img {
+    padding-top: 0px;
+}
+
+
+.contenedor6__caja2 {
+    width: 300px;
+}
+/*--YUCATAN--*/
+
+
+
+    .contenedor8__caja1 h2 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .pie__correo h4 {
+        font-size: 1rem;
+    }
+
+    .contenedor8 {
+        height: 176vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: right;
+        background-size: cover;
+    }
+
+    .contenedor8__caja1 h2 {
+        padding-top: 100px;
+    }
+
+    .contenedor9 {
+        display: flex;
+        height: 60vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 0px !important;
+        text-align: justify;
+        margin-top: -150px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px !important;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 90% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 70%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 50vh !important;
+        background-position: center;
+        background-size: cover;
+        padding-top: 0px !important;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 70% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+@media only screen and (min-width: 391px) and (max-width: 414px) {
+
+    .contenedor1__back1 {
+        padding-top: 100px;
+        height: 50vh;
+    }
+
+    .contenedor1 {
+        height: 50vh;
+    }
+
+    .contenedor2 {
+        height: 60vh;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 150px !important;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 3rem;
+        margin-top: -5px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+
+    .contenedor2__caja1 p {
+        font-size: 1.5rem;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+    }
+
+
+/*--CELESTUN--*/
+
+    .contenedor3 {
+        height: 90vh;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 {
+        margin-top: -160px !important;
+         
+    }
+
+    .contenedor3__caja2 p {
+        font-size: 1.5rem;
+        font-family: 'abelregular';
+        color: var(--negro-generico);
+        text-align: justify;
+        width: 300px !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+
+    .contenedor3__caja2 {
+        width: 300px !important;
+    }
+/*--CELESTUN--*/
+
+
+/*--COLORADA--*/
+
+.contenedor4 {
+    height: 90vh;
+}
+
+.contenedor4__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor4__caja1 {
+    margin-top: -210px !important;
+}
+
+.contenedor4__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor4__caja1 {
+    width: 300px;
+}
+
+
+.contenedor4__caja2 {
+    width: 300px;
+}
+/*--COLORADA--*/
+
+
+/*--OASIS--*/
+
+.contenedor5 {
+    height: 90vh;
+}
+
+.contenedor5__caja2 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor5__caja2 {
+    margin-top: -200px !important;
+}
+
+.contenedor5__caja2 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor5__caja1 {
+    width: 300px;
+}
+
+
+.contenedor5__caja2 {
+    width: 300px;
+}
+/*--OASIS--*/
+
+
+/*--YUCATAN--*/
+
+.contenedor6 {
+    height: 90vh;
+}
+
+
+.contenedor6__caja1 h1 {
+    font-size: 3rem;
+    font-family: 'Pepper-sauce';
+    color: var(--texto-azul);
+}
+
+.contenedor6__caja1 {
+    margin-top: -120px !important;
+}
+
+.contenedor6__caja1 p {
+    font-size: 1.5rem;
+    font-family: 'abelregular';
+    color: var(--negro-generico);
+    text-align: justify;
+}
+
+.contenedor6__caja1 {
+    width: 300px;
+}
+
+.contenedor6__caja2 img {
+    padding-top: 40px;
+}
+
+
+.contenedor6__caja2 {
+    width: 300px;
+}
+/*--YUCATAN--*/
+
+
+
+    .contenedor8__caja1 h2 {
+        font-size: 3rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .pie__correo h4 {
+        font-size: 1rem;
+    }
+
+    .contenedor8 {
+        height: 168vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: right;
+        background-size: cover;
+    }
+
+    .contenedor8__caja1 h2 {
+        padding-top: 100px;
+    }
+
+    .contenedor9 {
+        display: flex;
+        height: 30vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 0px !important;
+        text-align: justify;
+        margin-top: -150px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px !important;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 90% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 70%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 50vh !important;
+        background-position: center;
+        background-size: cover;
+        padding-top: 0px !important;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 70% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+
+@media screen and (max-width: 915px) and (orientation: landscape) {
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 150vh;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 130vh;
+    }
+
+    .contenedor2 {
+        display: flex;
+        height: 170vh;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        
+    }
+
+    .contenedor2__caja1 img {
+        margin-top: -10px;
+        width: 300px;
+        margin-bottom: -170px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 100px;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 5rem;
+        margin-top: -35px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor2__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        text-align: justify;
+        margin-top: 20px;
+    }
+
+    /*--CERVEZA CELESTUN---------*/
+    .contenedor3 {
+        height: 230vh;
+        justify-content: center !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+    .contenedor3__caja1 img {
+        width: 200px;
+    }
+
+    .contenedor3__caja2 {
+        margin-top: 0;
+        width: 500px;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 p {
+        text-align: justify;
+    }
+    /*--CERVEZA CELESTUN---------*/
+
+
+
+
+    /*--CERVEZA COLORADA---------*/
+    .contenedor4 {
+        justify-content: center !important;
+        height: 230vh;
+    }
+
+    .contenedor4__caja2 img {
+        width: 200px;
+        text-align: center;
+        margin-top: -200px;
+
+    }
+
+    .contenedor4__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+
+    .contenedor4__caja1 h1 {
+        font-size: 4rem;
+        text-align: center;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor4__caja1 p {
+        text-align: justify;
+        justify-content: right !important;
+    }
+
+    .contenedor4__caja1  {
+        margin-top: -200px !important;
+        width: 500px;
+
+    }
+    /*--CERVEZA COLORADA---------*/
+
+
+
+    /*--CERVEZA OASIS---------*/
+    .contenedor5 {
+        height: 230vh;
+        justify-content: center !important;
+    }
+
+    .contenedor5__caja1 img {
+        width: 200px;
+        margin-top: -200px;
+    }
+    
+    .contenedor5__caja1 {
+        width: 200px;
+    }
+
+    .contenedor5__caja2 {
+        margin-top: -200px !important;
+    }
+
+    .contenedor5__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor5__caja2 p {
+        text-align: justify;
+    }
+
+    .contenedor5__caja2 {
+        text-align: center;
+        justify-content: center;
+        width: 500px;
+    }
+    /*--CERVEZA OASIS---------*/
+
+
+    /*--CERVEZA YUCATAN-------*/
+    .contenedor6 {
+        justify-content: center !important;
+        height: 240vh;
+    }
+
+    .contenedor6__caja2 img {
+        width: 200px;
+        text-align: center !important;
+        margin-top: -200px;
+
+    }
+
+    .contenedor6__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+    .contenedor6__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor6__caja1 p {
+        
+        text-align: justify;
+
+    }
+
+    .contenedor6__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+        width: 500px;
+
+
+    }
+    /*--CERVEZA YUCATAN-------*/
+
+
+
+    /*--SECCION INSTAGRAM-------*/
+    .contenedor7 {
+        height: 180vh;
+        background-color: var(--fondo-amarillo);
+        overflow: hidden;
+    }
+
+    .contenedor7__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+
+    .rectangulo {
+        background-color: var(--fondo-amarillo);
+        height: 10vh;
+        margin-top: -75px;
+        z-index: 20 !important;
+        position: relative;
+    }
+    /*--SECCION INSTAGRAM------*/
+
+
+
+    /*--SECCION FORMULARIO----*/
+    .contenedor8 {
+        height: 380vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor8__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contenedor8__caja2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contenedor8__caja2 img {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 p {
+        font-size: 2rem;
+        width: 70%;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    
+    }
+    /*--SECCION FORMULARIO----*/
+
+    .contenedor9 {
+        display: flex;
+        height: 70vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+        margin-top: -150px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 100% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 70%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 100vh !important;
+        padding-top: 0px !important;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 40% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+  }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .fa-house {
+        display:inline-block;
+        color: var(--texto-azul);
+    }
+    
+    .fa-beer-mug-empty {
+        display: inline-block;
+        color: var(--texto-azul);
+    }
+    
+    .fa-envelope {
+        display: inline-block;
+        color: var(--texto-azul);
+    }
+
+    .contenedor1 {
+        background-image: url('/imagenes/fondo-principal.webp');
+        width: 100%;
+        height: 50vh !important;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;    
+    }
+
+    .contenedor1__back1 {
+        background-image: url('/imagenes/cervezas-covers.webp');
+        width: 100%;
+        background-size: 120%;
+        background-position: center;   
+        background-repeat: no-repeat;
+        height: 50vh !important;
+    }
+
+    .contenedor2 {
+        display: flex;
+        height: 50vh;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        
+    }
+
+    .contenedor2__caja1 img {
+        margin-top: -10px;
+        width: 300px;
+        margin-bottom: -170px;
+    }
+
+    .contenedor2__caja1 h1 {
+        font-size: 8rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        margin-bottom: -12px;
+        margin-top: 100px;
+    }
+
+    .contenedor2__caja1 h3 {
+        font-size: 5rem;
+        margin-top: -35px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor2__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        text-align: justify;
+        margin-top: 20px;
+    }
+
+    /*--CERVEZA CELESTUN---------*/
+    .contenedor3 {
+        height: 70vh;
+        justify-content: center !important;
+    }
+
+    .contenedor3__caja1 {
+        width: 300px;
+    }
+
+    .contenedor3__caja1 img {
+        width: 200px;
+    }
+
+    .contenedor3__caja2 {
+        margin-top: 0;
+        width: 500px;
+    }
+
+    .contenedor3__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor3__caja2 p {
+        text-align: justify;
+    }
+    /*--CERVEZA CELESTUN---------*/
+
+
+
+
+    /*--CERVEZA COLORADA---------*/
+    .contenedor4 {
+        justify-content: center !important;
+        height: 70vh;
+    }
+
+    .contenedor4__caja2 img {
+        width: 200px;
+        text-align: center;
+        margin-top: -200px;
+
+    }
+
+    .contenedor4__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+
+    .contenedor4__caja1 h1 {
+        font-size: 4rem;
+        text-align: center;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor4__caja1 p {
+        text-align: justify;
+        justify-content: right !important;
+    }
+
+    .contenedor4__caja1  {
+        margin-top: -200px !important;
+        width: 500px;
+
+    }
+    /*--CERVEZA COLORADA---------*/
+
+
+
+    /*--CERVEZA OASIS---------*/
+    .contenedor5 {
+        height: 70vh;
+        justify-content: center !important;
+    }
+
+    .contenedor5__caja1 img {
+        width: 200px;
+        margin-top: -200px;
+    }
+    
+    .contenedor5__caja1 {
+        width: 200px;
+    }
+
+    .contenedor5__caja2 {
+        margin-top: -200px !important;
+    }
+
+    .contenedor5__caja2 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor5__caja2 p {
+        text-align: justify;
+    }
+
+    .contenedor5__caja2 {
+        text-align: center;
+        justify-content: center;
+        width: 500px;
+    }
+    /*--CERVEZA OASIS---------*/
+
+
+    /*--CERVEZA YUCATAN-------*/
+    .contenedor6 {
+        justify-content: center !important;
+        height: 70vh;
+    }
+
+    .contenedor6__caja2 img {
+        width: 200px;
+        text-align: center !important;
+        margin-top: -200px;
+
+    }
+
+    .contenedor6__caja2 {
+        text-align: center !important;
+        width: 200px;
+    }
+
+    .contenedor6__caja1 h1 {
+        font-size: 4rem;
+        font-family: 'Pepper-sauce';
+        color: var(--texto-azul);
+    }
+
+    .contenedor6__caja1 p {
+        
+        text-align: justify;
+
+    }
+
+    .contenedor6__caja1 {
+        text-align: center !important;
+        margin-top: -200px !important;
+        width: 500px;
+
+
+    }
+    /*--CERVEZA YUCATAN-------*/
+
+
+
+    /*--SECCION INSTAGRAM-------*/
+    .contenedor7 {
+        height: 60vh;
+        background-color: var(--fondo-amarillo);
+        overflow: hidden;
+    }
+
+    .contenedor7__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+
+    .rectangulo {
+        background-color: var(--fondo-amarillo);
+        height: 10vh;
+        margin-top: -75px;
+        z-index: 20 !important;
+        position: relative;
+    }
+    /*--SECCION INSTAGRAM------*/
+
+
+
+    /*--SECCION FORMULARIO----*/
+    .contenedor8 {
+        height: 138vh;
+        background-color: var(--fondo-amarillo);
+        background-image: url('/imagenes/fondo-curva-amarillo.webp');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor8__caja1 h2 {
+        font-size: 5rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contenedor8__caja2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .contenedor8__caja2 img {
+        width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contenedor8__caja3 p {
+        font-size: 2rem;
+        width: 70%;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    
+    }
+    /*--SECCION FORMULARIO----*/
+
+    .contenedor9 {
+        display: flex;
+        height: 50vh !important;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    
+    
+    .contenedor9__caja1 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    
+    .contenedor9__caja1 h4 {
+        font-size: 2rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h2 {
+        font-size: 4rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor9__caja1 h3 {
+        font-size: 4rem;
+        margin-top: 10px;
+        font-family: 'abelregular';
+        color: var(--texto-azul);
+    }
+    
+    .contenedor9__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: inline-block;
+        margin-top: 20px;
+        text-align: justify;
+        margin-top: 100px !important;
+    }
+
+
+
+    .container__slider{
+        max-width: 1000px;
+        height: 250px !important;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    
+    input[type=radio]{
+        display: none;
+    }
+    
+    .container{
+        width: 100%;
+        max-width: 800px;
+        height: 100% !important;
+        max-height: 600px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cards{
+        position: relative;
+        width: 100%;
+        height: 100% !important;
+    }
+    
+    .card{
+        position: absolute;
+        width: 60%;
+        height: 100% !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 80%;
+        height: 150%;
+    }
+    
+    
+    #item-2:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-3,
+    #item-3:checked ~ .cards #selector-2{
+        transform: translateX(-40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-3:checked ~ .cards #selector-1,
+    #item-1:checked ~ .cards #selector-2,
+    #item-2:checked ~ .cards #selector-3{
+        transform: translateX(40%) scale(0.8);
+        opacity: 0.6;
+        z-index: 0;
+    }
+    
+    #item-1:checked ~ .cards #selector-1,
+    #item-2:checked ~ .cards #selector-2,
+    #item-3:checked ~ .cards #selector-3{
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+
+
+
+
+
+    .contenedor10 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 50vh !important;
+        padding-top: 0px !important;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .contenedor10__caja1 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja1 h2 {
+        font-size: 15rem;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--fondo-amarillo);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 5;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 h4 {
+        font-size: 3rem !important;
+        font-family: 'Pepper-sauce';
+        text-transform: uppercase;
+        color: var(--texto-azul);
+        text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        z-index: 0;
+        position: relative;
+    }
+    
+    .contenedor10__caja1 p {
+        font-size: 1.5rem !important;
+        font-family: 'aileronlight';
+        display: inline-block;
+        margin-top: 20px;
+        text-align:justify;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .contenedor10__caja2 {
+        width: 100%;
+    }
+    
+    .contenedor10__caja2 img {
+        width: 40% !important;
+        text-align: left;
+        align-items: start;
+        justify-content: start;
+    }
+  }
+
+  /*-- INICIA SECCION MAPA Y NOSOTROS---------------------------------------------*/
+.contenedor9 {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+.contenedor9__caja1 {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+.contenedor9__caja1 h4 {
+    font-size: 7rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.contenedor9__caja1 h2 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--fondo-amarillo);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 5;
+    position: relative;
+}
+
+.contenedor9__caja1 h3 {
+    font-size: 4rem;
+    margin-top: 10px;
+    font-family: 'abelregular';
+    color: var(--texto-azul);
+}
+
+.contenedor9__caja1 p {
+    font-size: 3rem;
+    font-family: 'aileronlight';
+    width: 70%;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: justify;
+}
+/*-- FINALIZA SECCION MAPA Y NOSOTROS---------------------------------------------*/
+
+.contenedor10 {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding-top: 0px;
+}
+
+.contenedor10__caja1 {
+    width: 100%;
+}
+
+.contenedor10__caja1 h2 {
+    font-size: 15rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--fondo-amarillo);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 5;
+    position: relative;
+}
+
+.contenedor10__caja1 h4 {
+    font-size: 7rem;
+    font-family: 'Pepper-sauce';
+    text-transform: uppercase;
+    color: var(--texto-azul);
+    text-shadow: -4px 1px 8px rgba(0,0,0,0.6);
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.contenedor10__caja1 p {
+    font-size: 3rem;
+    font-family: 'aileronlight';
+    display: inline-block;
+    margin-top: 20px;
+    text-align:justify;
+    width: 70%;
+}
+
+.contenedor10__caja2 {
+    width: 100%;
+}
+
+.contenedor10__caja2 img {
+    width: 35%;
+    text-align: left;
+    align-items: start;
+    justify-content: start;
+}
+  
+
+.container__slider{
+    max-width: 1000px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 600px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+#item-2:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-2{
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-3:checked ~ .cards #selector-1,
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3{
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3{
+    transform: translateX(0) scale(1);
+    z-index: 1;
+}       
