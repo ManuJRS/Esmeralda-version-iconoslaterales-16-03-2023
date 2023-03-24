@@ -755,9 +755,12 @@ a.eapps-link {
     }
 
     .contenedor2 {
-        height: 100vh;
+        display: flex;
+        height: 80vh;
         align-items: center;
         text-align: center;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
         
     }
 
@@ -1098,13 +1101,14 @@ a.eapps-link {
 /*-- FINALIZA SECCION MAPA Y NOSOTROS---------------------------------------------*/
 
 .contenedor10 {
+    display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh !important;
     background-position: center;
     background-size: cover;
-    padding-top: 80px !important;
+    padding-top: 0px !important;
 }
 
 .contenedor10__caja1 {
